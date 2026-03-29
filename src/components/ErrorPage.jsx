@@ -1,0 +1,67 @@
+import { useLocation } from "react-router-dom";
+
+
+const ErrorPage = () => {
+  const location = useLocation();
+
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center px-4">
+      <div className="text-center max-w-lg">
+
+        <h1 className="text-[10rem] font-serif font-bold text-pink-800 leading-none select-none">
+          404
+        </h1>
+
+        <div className="flex justify-center mb-6 -mt-4">
+          <svg
+            className="w-20 h-20 text-pink-500 opacity-80"
+            fill="currentColor"
+            viewBox="0 0 64 64"
+          >
+            <path d="M8 4h30l14 14v42H8V4zm28 0v14h14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+            <line x1="16" y1="28" x2="44" y2="28" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            <line x1="16" y1="36" x2="44" y2="36" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            <line x1="16" y1="44" x2="32" y2="44" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            {/* X mark */}
+            <line x1="26" y1="10" x2="38" y2="22" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            <line x1="38" y1="10" x2="26" y2="22" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        {/* ── Heading ── */}
+        <h2 className="text-3xl font-serif font-bold text-pink-300 mb-3">
+          Page Not Found
+        </h2>
+
+        <p className="text-pink-400 text-sm mb-4">
+          Oops! The page you're looking for doesn't exist in our library.
+        </p>
+
+        <div className="bg-black border border-pink-700 rounded-lg px-5 py-3 mb-8 inline-block">
+          <p className="text-pink-500 text-xs uppercase tracking-widest mb-1 font-semibold">
+            Invalid Route
+          </p>
+          <p className="text-pink-300 font-mono text-sm break-all">
+            {location.pathname}
+          </p>
+        </div>
+
+        <div>
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-400 text-pink-950 font-bold px-8 py-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-pink-400/30 hover:scale-105 text-sm"
+          >
+            {/* Arrow icon */}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </a>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default ErrorPage;
